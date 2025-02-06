@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, Box, Alert } from '@mui/material';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate =useNavigate()
   const { handleLogin } = useAuth();
 
   const handleSubmit = (e) => {
@@ -15,11 +17,12 @@ function Login() {
     setError('');
     setSuccess('');
     console.log('Login Data:', { email, password });
-    axios.post('http://localhost:5000/api/auth/login',{email,password}).then(res =>{
+    axios.post('https://backendblogapp-65qh.onrender.com/api/auth/login',{email,password}).then(res =>{
       alert(res.data.message)
       localStorage.setItem('token', res.data.token)})
       .catch(err=>setError(err.response?.data?.message || 'An error occurred during login.'))
-      window.location.href = '/';
+      // window.location.href = '/';
+      navigate('/')
       handleLogin()
   };
 

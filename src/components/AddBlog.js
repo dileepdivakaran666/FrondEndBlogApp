@@ -14,7 +14,7 @@ function AddBlog() {
         e.preventDefault()
         
         axios.post(
-            "http://localhost:5000/api/posts",
+            "https://backendblogapp-65qh.onrender.com/api/posts",
             { title, content, category }, // Request body
             {
               headers: {

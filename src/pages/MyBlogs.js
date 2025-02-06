@@ -10,7 +10,7 @@ function MyBlog() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/posts/myblogs`, {
+      .get(`https://backendblogapp-65qh.onrender.com/api/posts/myblogs`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {setBlogs(response.data)

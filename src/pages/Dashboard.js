@@ -9,7 +9,7 @@ function Dashboard() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts')
+    axios.get('https://backendblogapp-65qh.onrender.com/api/posts')
       .then(response => setBlogs(response.data))
       .catch(error => console.error(error));
   }, []);

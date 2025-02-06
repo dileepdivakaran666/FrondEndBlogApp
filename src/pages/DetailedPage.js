@@ -34,7 +34,7 @@ function DetailedPage() {
 
     const handleDelete = async () => {
       try {
-          await axios.delete(`http://localhost:5000/api/posts/${blog._id}`).then(response=>{if (response.status === 200) alert("Blog Deleted");
+          await axios.delete(`https://backendblogapp-65qh.onrender.com/api/posts/${blog._id}`).then(response=>{if (response.status === 200) alert("Blog Deleted");
             handleClose(); // Close the dialog after deletion
             navigate('/')
           })

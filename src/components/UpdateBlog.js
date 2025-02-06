@@ -28,7 +28,7 @@ function UpdateBlog() {
       const handleCreateBlog = async(e)=>{
         e.preventDefault()
         console.log('Signup Data:', { title, content, category });
-        axios.put(`http://localhost:5000/api/posts/${id}`,
+        axios.put(`https://backendblogapp-65qh.onrender.com/api/posts/${id}`,
             { title, content, category }, // Request body
             {
               headers: {
